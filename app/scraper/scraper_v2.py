@@ -125,8 +125,8 @@ class WebScraper:
                 # Initialize the Google Cloud Storage client
                 storage_client = storage.Client()
 
-                folder_name = os.environ("GSCFOLDERNAME")
-                bucket_name = os.environ("BUCKETNAME")
+                folder_name = os.environ.get("GSCFOLDERNAME")
+                bucket_name = os.environ.get("BUCKETNAME")
                 bucket = storage_client.get_bucket(bucket_name)
 
                 # Upload the JSON string to the specified location in the bucket
@@ -160,8 +160,8 @@ def prompt_model( prompt: str):
 
 class TransformFn():
     def __init__(self):
-        location = os.getenv("LOCATION")
-        project_number = os.getenv("PROJECTNUMBER")
+        location = os.environ.get("LOCATION")
+        project_number = os.environ.get("PROJECTNUMBER")
         vertexai.init(project=project_number, location=location)
         self.scraper = WebScraper(project_number, location)
 
