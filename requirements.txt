@@ -1,0 +1,11 @@
+beautifulsoup4
+requests
+google-cloud-pubsub
+google-cloud-storage
+google-cloud-secret-manager
+python-dateutil
+google-cloud-aiplatform
+fastapi
+uvicorn
+Jinja2
+python-dotenv
