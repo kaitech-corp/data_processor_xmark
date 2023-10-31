@@ -114,6 +114,7 @@ class WebScraper:
                     self.write_to_gcs(json_element)
                     return 'Completed'
                 return 'Website did not pass checks.'
+            print('Did not process')
             return 'Did not process'
         except Exception as e:
             # Handle other exceptions
