@@ -125,8 +125,8 @@ class WebScraper:
                 # Initialize the Google Cloud Storage client
                 storage_client = storage.Client()
 
-                folder_name = os.getenv("GSCFOLDERNAME")
-                bucket_name = os.getenv("BUCKETNAME")
+                folder_name = os.environ("GSCFOLDERNAME")
+                bucket_name = os.environ("BUCKETNAME")
                 bucket = storage_client.get_bucket(bucket_name)
 
                 # Upload the JSON string to the specified location in the bucket
