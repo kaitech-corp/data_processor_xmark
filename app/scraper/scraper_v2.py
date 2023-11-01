@@ -108,7 +108,7 @@ class WebScraper:
                 title, content = self.scrape_website(element, keywords)
                 if title and content and len(content) > 750:
                     date_posted = self.scrape_posted_date(element)
-                    tag_prompt = f'Generate 10 one word tags in comma separated format all related to the following content: {content}'
+                    tag_prompt = f'Generate 10 one word tags in comma separated format most related to the following content: {content}'
                     tags = prompt_model(tag_prompt)
                     json_element = self.create_json(title=title, content=content, tags=tags, url=element, date_posted=date_posted)
                     self.write_to_gcs(json_element)
