@@ -54,7 +54,7 @@ class WebScraper:
                 for keyword in keywords:
                     if keyword.lower() in cleaned_content.lower():
                         keyword_count += 1
-                        if keyword_count >= 5:
+                        if keyword_count >= 3:
                             return title, cleaned_content
 
             return None, None
